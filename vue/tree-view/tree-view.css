@@ -1,0 +1,6 @@
+.node{
+    margin-left: 10px;
+}
+.node > span{
+    cursor: pointer;
+}
