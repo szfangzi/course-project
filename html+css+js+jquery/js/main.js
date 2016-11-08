@@ -149,6 +149,7 @@ $('.list .page').on('click', '.pg', function () {
     loginPopup.open();
   });
 
+
   //hashchange模拟路由保存弹窗登录状态
   if(location.hash == "#login" && localStorage){
     loginPopup.open();
@@ -190,5 +191,5 @@ $('.list .page').on('click', '.pg', function () {
     $('.user-float').removeClass('on');
   }
 
-  
+
 }(window));
