@@ -4,3 +4,9 @@
 .node > span{
     cursor: pointer;
 }
+.node-list{
+    display: none;
+}
+.node-list.show{
+    display: block;
+}
