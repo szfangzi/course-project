@@ -22,13 +22,5 @@ var vm = new Vue({
     el:'#tree-view',
     data:{
         treeData:treeData
-    },
-    methods:{
-        open: function (index) {
-
-        },
-        close: function (index) {
-
-        }
     }
 });
