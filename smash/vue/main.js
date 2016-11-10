@@ -43,12 +43,38 @@
     '<a href="javascript:;" v-on:click="updatePage(pageObj.current-1)" v-if="pageObj.current>1">&laquo; prev</a>'+
     '</span>'+
     '<div class="pgs clearfix">'+
-    '<a href="javascript:;" class="pg" v-on:click="updatePage(i)" v-for="i in pageObj.fixedArr" v-bind:class="{active:i==pageObj.current}">{{i}}</a>'+
+    '<a href="javascript:;" class="pg" v-on:click="updatePage(i)" v-for="i in indexs" v-bind:class="{active:i==pageObj.current}">{{i}}</a>'+
     '</div>'+
     '<span class="next text-center">'+
     '<a href="javascript:;" v-on:click="updatePage(pageObj.current+1)" v-if="pageObj.current < pageObj.total">next &raquo;</a>'+
     '</span>',
     props:['pageObj'],
+    computed: {
+      indexs: function(){
+        var left = 1
+        var right = this.pageObj.total;
+        var ar = []
+        if(this.pageObj.total>= 7){
+          if(this.pageObj.current > 3 && this.pageObj.current <= this.pageObj.total-2){
+            left = this.pageObj.current - 3;
+            right = this.pageObj.current + 2;
+          }else{
+            if(this.pageObj.current<=3){
+              left = 1
+              right = 6
+            }else{
+              right = this.pageObj.total;
+              left = this.pageObj.total - 5;
+            }
+          }
+        }
+        while (left <= right){
+          ar.push(left)
+          left ++
+        }
+        return ar
+      }
+    },
     methods:{
       updatePage: function (i) {
         this.$dispatch('pageChange', i);
@@ -56,29 +82,19 @@
     }
   });
 
-  vm = new Vue({
+  var vm = new Vue({
     el:'.list',
     data:{
       list:[],
       pageObj:{}
-    },
-    methods:{
-
     }
-
   });
   vm.$on('pageChange', function (current) {
     $.get('../public/json/page'+current+'.json', function (data) {
       vm.list = data.list;
       var obj = {};
-      var fixedArr = [];
-
-      for (var i = 1; i <= data.total; i++) {
-        fixedArr.push(i);
-      }
       obj.total = data.total;
       obj.current = data.current;
-      obj.fixedArr = fixedArr;
       vm.pageObj = obj;
       $('body').animate({"scrollTop":0}, 500);
     });
