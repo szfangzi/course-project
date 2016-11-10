@@ -63,9 +63,7 @@
       pageObj:{}
     },
     methods:{
-      updatePageData: function (i) {
 
-      }
     }
 
   });
