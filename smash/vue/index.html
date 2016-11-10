@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!--ie=edge 强制使用IE最新版本渲染(IE11已被弃用)-->
+  <title>Responsive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <!-- build:css css/combined.css -->
+  <link rel="stylesheet" href="../public/css/normalize.css">
+  <link rel="stylesheet" href="../public/css/main.css">
+  <!-- endbuild -->
+  <script src="../public/js/vue.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <a href="/"><img src="../public/img/logo.png" alt=""></a>
+  </div>
+  <div class="btns">
+    <a href="javascript:;" class="searchBtn">
+      <span class="txt">SEARCH</span><span class="x">X</span>
+    </a>
+    <a href="javascript:;" class="menuBtn">
+      <span class="txt">MENU</span><span class="x">X</span>
+    </a>
+  </div>
+  <form class="searchBox hide">
+    <div class="text">Search on Smashing Magazine</div>
+    <div class="searchInputBox clearfix">
+      <input type="text" placeholder="e.g.CSS">
+      <button class="searchBtn">Search</button>
+    </div>
+  </form>
+  <nav class="clearfix hide">
+    <div class="menu smashMenu">
+      <h3>Smashing Pages:</h3>
+      <ul>
+        <li><a href="javascript:;">Books</a></li>
+        <li><a href="javascript:;">eBooks</a></li>
+        <li><a href="javascript:;">Tickets</a></li>
+        <li><a href="javascript:;">Shop</a></li>
+        <li><a href="javascript:;">Email Newsletter</a></li>
+        <li><a href="javascript:;">Jobs</a></li>
+        <li><a href="javascript:;">About us / Impressum</a></li>
+      </ul>
+    </div>
+    <div class="menu categories">
+      <h3>Categories:</h3>
+      <ul>
+        <li><a href="javascript:;">Coding</a></li>
+        <li><a href="javascript:;">Design</a></li>
+        <li><a href="javascript:;">Mobile</a></li>
+        <li><a href="javascript:;">Graphics</a></li>
+        <li><a href="javascript:;">UX Design</a></li>
+        <li>
+          <a href="javascript:;" class="long">WordPress</a>
+          <a href="javascript:;" class="short">WP</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<nav class="topNav clearfix">
+  <div class="logo">
+    <a href="/"><img src="../public/img/logo.png" alt=""></a>
+  </div>
+  <ul class="nav">
+    <li><a href="javascript:;">Books</a></li>
+    <li class="eBook"><a href="javascript:;">eBooks</a></li>
+    <li><a href="javascript:;">Tickets</a></li>
+    <li><a href="javascript:;">Shop</a></li>
+    <li><a href="javascript:;">Jobs</a></li>
+  </ul>
+  <ul class="socialLink">
+    <li class="rss">
+      <a href="javascript:;">RSS</a>
+    </li>
+    <li class="fb">
+      <a href="javascript:;">Facebook</a>
+    </li>
+    <li class="tw">
+      <a href="javascript:;">Twitter</a>
+    </li>
+    <li class="nl">
+      <a href="javascript:;">Newsletter</a>
+    </li>
+  </ul>
+</nav>
+<main>
+  <div class="col">
+    <form class="searchBox">
+      <div class="text">Search on Smashing Magazine</div>
+      <div class="searchInputBox clearfix">
+        <input type="text" placeholder="e.g.CSS">
+        <button class="searchBtn">Search</button>
+      </div>
+    </form>
+    <div class="main clearfix">
+      <ul class="menu clearfix">
+        <li class="m m1"><a href="" class="mainA">CODING</a>
+          <ul>
+            <li><a href="" class="sub">CSS</a></li>
+            <li><a href="" class="sub">HTML</a></li>
+            <li><a href="" class="sub">JavaScript</a></li>
+            <li><a href="" class="sub">Techniques</a></li>
+          </ul>
+        </li>
+        <li class="m m2"><a href="" class="mainA">DESIGN</a>
+          <ul>
+            <li><a href="" class="sub">Web Design</a></li>
+            <li><a href="" class="sub">Responsive</a></li>
+            <li><a href="" class="sub">Typography</a></li>
+            <li><a href="" class="sub">Inspiration</a></li>
+          </ul>
+        </li>
+        <li class="m m3"><a href="" class="mainA">MOBILE</a>
+          <ul>
+            <li><a href="" class="sub">iPhone & iPad</a></li>
+            <li><a href="" class="sub">Android</a></li>
+            <li><a href="" class="sub">Design Patterns</a></li>
+          </ul>
+        </li>
+        <li class="m m4"><a href="" class="mainA">GRAPHICS</a>
+          <ul>
+            <li><a href="" class="sub">Photoshop</a></li>
+            <li><a href="" class="sub">Fireworks</a></li>
+            <li><a href="" class="sub">Wallpapers</a></li>
+            <li><a href="" class="sub">Freebies</a></li>
+          </ul>
+        </li>
+        <li class="m m5"><a href="" class="mainA">UX DESIGN</a>
+          <ul>
+            <li><a href="" class="sub">Usability</a></li>
+            <li><a href="" class="sub">User Experience</a></li>
+            <li><a href="" class="sub">UI Design</a></li>
+            <li><a href="" class="sub">E-Commerce</a></li>
+          </ul>
+        </li>
+        <li class="m m6">
+          <a href="" class="mainA short">WP</a>
+          <a href="" class="mainA long">WORDPRESS</a>
+          <ul>
+            <li><a href="" class="sub">Essentials</a></li>
+            <li><a href="" class="sub">Techniques</a></li>
+            <li><a href="" class="sub">Plugins</a></li>
+            <li><a href="" class="sub">Themes</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="list">
+        <div class="article-list">
+          <art v-bind:list="list"></art>
+        </div>
+
+        <div class="page clearfix">
+          <page v-bind:page-obj="pageObj"></page>
+        </div>
+        <a href="javascript:;" class="toTopBtn">↑ Back to top</a>
+      </div>
+    </div>
+  </div>
+</main>
+<aside>
+  <div class="col clearfix">
+    <form class="searchBox" action="javascript:;">
+      <div class="text">Search on Smashing Magazine</div>
+      <div class="searchInputBox clearfix">
+        <input type="text" placeholder="e.g.CSS">
+        <button class="searchBtn">Search</button>
+      </div>
+    </form>
+    <section class="ad">
+      <div class="title">
+        <span>Advertisement</span>
+        <a href="javascript:;">Advertise with us!</a>
+      </div>
+      <ul>
+        <li>
+          <a href="javascript:;" class="imgLink"><img src="../public/img/ai.png" alt=""></a>
+          <a href="javascript:;" class="txt">Make your first API call</a>
+        </li>
+        <li>
+          <a href="javascript:;"><img src="../public/img/ai4.png" alt=""></a>
+          <a href="javascript:;" class="txt">Try Kendo UI Now</a>
+        </li>
+      </ul>
+    </section>
+    <section class="sideBox">
+      <ul class="bookList clearfix">
+        <li>
+          <img src="../public/img/sidebar-sb5.png" alt="">
+
+          <p>It's finally here. Smashing Book #5, our new book on real-life responsive design. With front-end techniques
+            and patterns from actual projects, it's a playbook to master all the tricky facets and hurdles of responsive
+            design. Get the book. Free shipping.</p>
+        </li>
+        <li>
+          <img src="../public/img/hardboiled-web-design-left.png" alt="">
+
+          <p>We build inaccessible websites all the time, but it’s not for the lack of care or talent. It’s a matter of
+            doing things the wrong way. That’s why we're writing a new book on Inclusive Design Patterns, by Heydon
+            Pickering. Available from September. Pre-order the book today.</p>
+        </li>
+        <li>
+          <img src="../public/img/inclusive-design-patterns.png" alt="">
+
+          <p>With responsive design, creating Photoshop mock-ups is just inefficient. In the new anniversary edition of
+            Hardboiled Web Design, Andy Clarke shows how to improve workflow, craft better front-end, establish style
+            guides and reduce wasted time. Get the book.</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+</aside>
+<footer>
+  <ul class="clearfix">
+    <li>
+      <a href="javascript:;" class="imgLink"><img alt="Smashing Book 5" width="100" height="106"
+                                                  src="../public/img/footer-sb5.png"></a>
+
+      <div class="r">
+        <a href="javascript:;" class="title">Smashing Book 5 </a>With smart front-end techniques from real-life
+        responsive projects.<a href="javascript:;" class="more">Learn more...</a>
+      </div>
+
+    </li>
+    <li>
+      <a href="javascript:;" class="imgLink"><img alt="The Smashing Library" width="100" height="106"
+                                                  src="../public/img/smashing-library-footer-new-opt.png"></a>
+
+      <div class="r">
+        <a href="javascript:;" class="title">The Smashing Library </a>Grab all published and upcoming Smashing eBooks,
+        in one swoop.<a href="javascript:;" class="more">Learn more...</a>
+      </div>
+    </li>
+    <li>
+      <a href="javascript:;" class="imgLink"><img alt="Smashing Workshops" width="100" height="106"
+                                                  src="../public/img/susan-weinschenk.jpg"></a>
+
+      <div class="r">
+        <a href="javascript:;" class="title">Smashing Workshops</a>Join our hands-on full-day workshops, run by experts
+        of the industry. Good stuff.<a href="javascript:;" class="more">Learn more...</a>
+      </div>
+    </li>
+  </ul>
+  <p class="fp ">
+    With a commitment to quality content for the design community.<br/>Founded by Vitaly Friedman and Sven Lennartz.
+    2006-2016.<br/>Made in Germany. ✎ <a href="javascript:;">Write for us</a> – <a href="javascript:;">Contact us</a> –
+    <a href="javascript:;">Datenschutzerklärung</a> – <a href="javascript:;">Impressum</a>.</p>
+</footer>
+
+<div class="user-float">
+  <div class="after-login">
+    <span class="username">欢迎,fang</span>
+    <a href="javascript:;" class="btn-esc">退出</a>
+  </div>
+  <div class="before-login">
+    <a href="javascript:;" class="login-open">登录</a>
+    <!--<a href="javascript:;" class="regist-open">注册</a>-->
+  </div>
+</div>
+
+<div class="maskWrapper" id="popup-wrapper">
+  <div class="popupWrapper">
+  <div id="login" class="popup-box">
+    <h2><span class="popup-title">Login</span> <a href="javascript:;" class="close">x</a></h2>
+    <div class="popup-content">
+      <form id="customer_login">
+        <ul>
+          <li class="field">
+            <input type="text" name="username" id="username" class="text-input" value="" placeholder="请输入你的账号" >
+          </li>
+          <li class="field js-pass">
+            <input type="password" name="password" id="password" class="text-input" value="" placeholder="请输入你的密码">
+          </li>
+        </ul>
+        <div class="ctrl">
+          <a class="btn btn-login" href="javascript:;">
+            登录
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+  <div class="mask"></div>
+</div>
+
+<script type="text/template" id="article-tmpl">
+  <% for(var k in list){ %>
+<article>
+  <div class="title">
+    <h2>
+      <div class="name"><%= list[k].name %></div>
+      <div class="author"><%= list[k].author %></div>
+    </h2>
+  </div>
+  <ul class="msg">
+    <li>September 15th, 2016</li>
+    <li><a href="javascript:;">Apps</a> <a href="javascript:;">Personalization</a></li>
+    <li><a href="javascript:;">4 Comments</a></li>
+  </ul>
+  <p>Once upon a time, in the not-so-distant past, people considered websites to be a prime indication of how
+    users’ attention was brief and unforgiving. Remember the dreaded bounce rate?</p>
+  <a href="javascript:;" class="imgLink"><img src="../public/img/mobile-banners-preview-opt.png" width="500" height="358" alt="Driving App Engagement With Personalization Techniques"></a>
+
+  <p>Remember the numerous times you worried that your content and graphics might not be 100% clear to users?
+    That was nothing. Compared to mobile, engaging users on the web is a piece of cake.</p>
+  <a href="javascript:;" class="moreBtn">Read more...</a>
+</article>
+  <%}%>
+</script>
+
+<script type="text/template" id="page-tmpl">
+<span class="prev text-center">
+  <% if(parseInt(data.current) > 1){ %>
+  <a href="javascript:;">&laquo; prev</a>
+  <% } %>
+</span>
+<div class="pgs clearfix">
+  <% for(var i=0;i<data.total;i++){ %>
+  <a href="javascript:;" class="pg <% if(data.current == i+1){ %>active<% } %>"><%=i+1%></a>
+  <% } %>
+</div>
+<span class="next text-center">
+  <% if(parseInt(data.current) < parseInt(data.total)){ %>
+  <a href="javascript:;">next &raquo;</a>
+  <% } %>
+</span>
+</script>
+
+<!-- build:js js/combined.js -->
+<script type="text/javascript" src="../public/js/jquery.min.js"></script>
+<script type="text/javascript" src="../public/js/ejs.min.js"></script>
+<script type="text/javascript" src="../public/js/modal.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<!-- endbuild -->
+</body>
+</html>

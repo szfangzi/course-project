@@ -32,87 +32,62 @@
     $('body').animate({"scrollTop":0}, 500);
   });
 
-  $.get('../public/json/page1.json', function (data) {
-    var html = '';
-    for (var i = 0; i < data.list.length; i++) {
-      html += '<article>\
-          <div class="title">\
-          <h2>\
-          <div class="name">'+
-        data.list[i].name
-        +'</div>\
-      <div class="author">'+
-        data.list[i].author
-        +'</div>\
-      </h2>\
-      </div>\
-      <ul class="msg">\
-          <li>September 15th, 2016</li>\
-      <li><a href="javascript:;">Apps</a> <a href="javascript:;">Personalization</a></li>\
-      <li><a href="javascript:;">4 Comments</a></li>\
-      </ul>\
-      <p>Once upon a time, in the not-so-distant past, people considered websites to be a prime indication of how\
-      users’ attention was brief and unforgiving. Remember the dreaded bounce rate?</p>\
-       <a href="javascript:;" class="imgLink"><img src="img/mobile-banners-preview-opt.png" width="500" height="358" alt="Driving App Engagement With Personalization Techniques"></a>\
-          <p>Remember the numerous times you worried that your content and graphics might not be 100% clear to users?\
-          That was nothing. Compared to mobile, engaging users on the web is a piece of cake.</p>\
-      <a href="javascript:;" class="moreBtn">Read more...</a>\
-      </article>';
+  Vue.component('art', {
+    template:'<article v-for="item in list">'+
+    '<div class="title"><h2><div class="name">{{item.name}}</div><div class="author">{{item.author}}</div></h2></div>'+
+    '<ul class="msg"><li>September 15th, 2016</li><li><a href="javascript:;">Apps</a> <a href="javascript:;">Personalization</a></li><li><a href="javascript:;">4 Comments</a></li></ul><p>Once upon a time, in the not-so-distant past, people considered websites to be a prime indication of how users’ attention was brief and unforgiving. Remember the dreaded bounce rate?</p><a href="javascript:;" class="imgLink"><img src="../public/img/mobile-banners-preview-opt.png" width="500" height="358" alt="Driving App Engagement With Personalization Techniques"></a><p>Remember the numerous times you worried that your content and graphics might not be 100% clear to users? That was nothing. Compared to mobile, engaging users on the web is a piece of cake.</p><a href="javascript:;" class="moreBtn">Read more...</a></article>',
+    props:['list']
+  });
+  Vue.component('page', {
+    template:'<span class="prev text-center">'+
+    '<a href="javascript:;" v-on:click="updatePage(pageObj.current-1)" v-if="pageObj.current>1">&laquo; prev</a>'+
+    '</span>'+
+    '<div class="pgs clearfix">'+
+    '<a href="javascript:;" class="pg" v-on:click="updatePage(i)" v-for="i in pageObj.fixedArr" v-bind:class="{active:i==pageObj.current}">{{i}}</a>'+
+    '</div>'+
+    '<span class="next text-center">'+
+    '<a href="javascript:;" v-on:click="updatePage(pageObj.current+1)" v-if="pageObj.current < pageObj.total">next &raquo;</a>'+
+    '</span>',
+    props:['pageObj'],
+    methods:{
+      updatePage: function (i) {
+        this.$dispatch('pageChange', i);
+      }
     }
-    $('.article-list').html(html);
-    //
-    var tmpl = $('#page-tmpl').html();
-    var html = ejs.render(tmpl, {data:data});
-    $('.page').html(html);
-
   });
 
-  //分页
-  var current = 1;
-  $('.list .page').on('click', '.pg', function () {
-    var $this = $(this);
-    var num = $this.html();
-    current = parseInt(num);
-    $.get('../public/json/page'+num+'.json', function (data) {
-      var list = data.list;
-      var tmpl = $('#article-tmpl').html();
-      var html = ejs.render(tmpl, {list:list});
-      $('.article-list').html(html);
-      $('body').animate({"scrollTop":0}, 500);
+  vm = new Vue({
+    el:'.list',
+    data:{
+      list:[],
+      pageObj:{}
+    },
+    methods:{
+      updatePageData: function (i) {
 
-      var tmpl = $('#page-tmpl').html();
-      var html = ejs.render(tmpl, {data: data});
-      $('.page').html(html);
-    });
+      }
+    }
 
-  }).on('click', '.prev a', function () {
-    current = current-1;
+  });
+  vm.$on('pageChange', function (current) {
     $.get('../public/json/page'+current+'.json', function (data) {
-      var list = data.list;
-      var tmpl = $('#article-tmpl').html();
-      var html = ejs.render(tmpl, {list:list});
-      $('.article-list').html(html);
+      vm.list = data.list;
+      var obj = {};
+      var fixedArr = [];
+
+      for (var i = 1; i <= data.total; i++) {
+        fixedArr.push(i);
+      }
+      obj.total = data.total;
+      obj.current = data.current;
+      obj.fixedArr = fixedArr;
+      vm.pageObj = obj;
       $('body').animate({"scrollTop":0}, 500);
-
-      var tmpl = $('#page-tmpl').html();
-      var html = ejs.render(tmpl, {data: data});
-      $('.page').html(html);
-    });
-
-  }).on('click', '.next a', function () {
-    current = current+1;
-    $.get('../public/json/page'+current+'.json', function (data) {
-      var list = data.list;
-      var tmpl = $('#article-tmpl').html();
-      var html = ejs.render(tmpl, {list:list});
-      $('.article-list').html(html);
-      $('body').animate({"scrollTop":0}, 500);
-
-      var tmpl = $('#page-tmpl').html();
-      var html = ejs.render(tmpl, {data: data});
-      $('.page').html(html);
     });
   });
+  vm.$emit('pageChange', 1);
+
+
 
   //搜索
   $('.searchInputBox .searchBtn').click(function () {
