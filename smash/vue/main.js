@@ -40,13 +40,13 @@
   });
   Vue.component('page', {
     template:'<span class="prev text-center">'+
-    '<a href="javascript:;" v-on:click="updatePage(pageObj.current-1)" v-if="pageObj.current>1">&laquo; prev</a>'+
+    '<a href="javascript:;" v-on:click="pageChangeNotify(pageObj.current-1)" v-if="pageObj.current>1">&laquo; prev</a>'+
     '</span>'+
     '<div class="pgs clearfix">'+
-    '<a href="javascript:;" class="pg" v-on:click="updatePage(i)" v-for="i in indexs" v-bind:class="{active:i==pageObj.current}">{{i}}</a>'+
+    '<a href="javascript:;" class="pg" v-on:click="pageChangeNotify(i)" v-for="i in indexs" v-bind:class="{active:i==pageObj.current}">{{i}}</a>'+
     '</div>'+
     '<span class="next text-center">'+
-    '<a href="javascript:;" v-on:click="updatePage(pageObj.current+1)" v-if="pageObj.current < pageObj.total">next &raquo;</a>'+
+    '<a href="javascript:;" v-on:click="pageChangeNotify(pageObj.current+1)" v-if="pageObj.current < pageObj.total">next &raquo;</a>'+
     '</span>',
     props:['pageObj'],
     computed: {
@@ -69,26 +69,28 @@
           }
         }
         while (left <= right){
-          ar.push(left)
-          left ++
+          ar.push(left);
+          left ++;
         }
         return ar
       }
     },
     methods:{
-      updatePage: function (i) {
+      pageChangeNotify: function (i) {
         this.$dispatch('pageChange', i);
       }
     }
   });
 
-  var vm = new Vue({
+   var vm = new Vue({
     el:'.list',
     data:{
       list:[],
       pageObj:{}
     }
   });
+
+  //自定义事件
   vm.$on('pageChange', function (current) {
     $.get('../public/json/page'+current+'.json', function (data) {
       vm.list = data.list;
