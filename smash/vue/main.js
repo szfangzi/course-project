@@ -87,20 +87,21 @@
     data:{
       list:[],
       pageObj:{}
-    }
+    },
+     events:{
+       pageChange:function (current) {
+        $.get('../public/json/page'+current+'.json', function (data) {
+          vm.list = data.list;
+          var obj = {};
+          obj.total = data.total;
+          obj.current = data.current;
+          vm.pageObj = obj;
+          $('body').animate({"scrollTop":0}, 500);
+        });
+       }
+     }
   });
 
-  //自定义事件
-  vm.$on('pageChange', function (current) {
-    $.get('../public/json/page'+current+'.json', function (data) {
-      vm.list = data.list;
-      var obj = {};
-      obj.total = data.total;
-      obj.current = data.current;
-      vm.pageObj = obj;
-      $('body').animate({"scrollTop":0}, 500);
-    });
-  });
   vm.$emit('pageChange', 1);
 
 
