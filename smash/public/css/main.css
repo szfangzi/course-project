@@ -222,7 +222,9 @@ a:hover, a:active {
 
 @media only screen and (min-width: 50em) {
   body {
-    border-left: .625em solid transparent; } }
+    border-left: .625em solid transparent;
+  }
+}
 
 @media only screen and (min-width: 90.625em) {
   body {
