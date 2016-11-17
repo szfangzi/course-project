@@ -40,13 +40,13 @@
   });
   Vue.component('page', {
     template:'<span class="prev text-center">'+
-    '<a href="javascript:;" v-on:click="pageChangeNotify(pageObj.current-1)" v-if="pageObj.current>1">&laquo; prev</a>'+
+    '<a href="javascript:;" v-on:click="pageChangeNotify(--pageObj.current)" v-if="pageObj.current>1">&laquo; prev</a>'+
     '</span>'+
     '<div class="pgs clearfix">'+
     '<a href="javascript:;" class="pg" v-on:click="pageChangeNotify(i)" v-for="i in indexs" v-bind:class="{active:i==pageObj.current}">{{i}}</a>'+
     '</div>'+
     '<span class="next text-center">'+
-    '<a href="javascript:;" v-on:click="pageChangeNotify(pageObj.current+1)" v-if="pageObj.current < pageObj.total">next &raquo;</a>'+
+    '<a href="javascript:;" v-on:click="pageChangeNotify(++pageObj.current)" v-if="pageObj.current < pageObj.total">next &raquo;</a>'+
     '</span>',
     props:['pageObj'],
     computed: {
@@ -77,6 +77,7 @@
     },
     methods:{
       pageChangeNotify: function (i) {
+        console.log(i);
         this.$dispatch('pageChange', i);
       }
     }
@@ -90,7 +91,8 @@
     },
      events:{
        pageChange:function (current) {
-        $.get('../public/json/page'+current+'.json', function (data) {
+         $.get('../public/api/page.php', {p:current}, function (data) {
+           data = JSON.parse(data);
           vm.list = data.list;
           var obj = {};
           obj.total = data.total;

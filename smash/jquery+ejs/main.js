@@ -32,8 +32,9 @@
     $('body').animate({"scrollTop":0}, 500);
   });
 
-  $.get('../public/json/page1.json', function (data) {
+  $.get('../public/api/page.php', {p:1}, function (data) {
     var html = '';
+    data = JSON.parse(data);
     for (var i = 0; i < data.list.length; i++) {
       html += '<article>\
           <div class="title">\
@@ -73,7 +74,8 @@
     var $this = $(this);
     var num = $this.html();
     current = parseInt(num);
-    $.get('../public/json/page'+num+'.json', function (data) {
+    $.get('../public/api/page.php', {p:num}, function (data) {
+      data = JSON.parse(data);
       var list = data.list;
       var tmpl = $('#article-tmpl').html();
       var html = ejs.render(tmpl, {list:list});
@@ -87,7 +89,8 @@
 
   }).on('click', '.prev a', function () {
     current = current-1;
-    $.get('../public/json/page'+current+'.json', function (data) {
+    $.get('../public/api/page.php', {p:current}, function (data) {
+      data = JSON.parse(data);
       var list = data.list;
       var tmpl = $('#article-tmpl').html();
       var html = ejs.render(tmpl, {list:list});
@@ -101,7 +104,8 @@
 
   }).on('click', '.next a', function () {
     current = current+1;
-    $.get('../public/json/page'+current+'.json', function (data) {
+    $.get('../public/api/page.php', {p:current}, function (data) {
+      data = JSON.parse(data);
       var list = data.list;
       var tmpl = $('#article-tmpl').html();
       var html = ejs.render(tmpl, {list:list});

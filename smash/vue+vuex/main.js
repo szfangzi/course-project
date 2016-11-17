@@ -40,7 +40,8 @@
     },
     mutations: {
       setPageObj:function(state) {
-        $.get('../public/json/page'+state.pageClickCurrent+'.json', function (data) {
+        $.get('../public/api/page.php', {p:state.pageClickCurrent}, function (data) {
+          data = JSON.parse(data);
           state.list = data.list;
           var obj = {};
           obj.total = data.total;
@@ -66,13 +67,13 @@
 
   Vue.component('page', {
     template:'<span class="prev text-center">'+
-    '<a href="javascript:;" v-on:click="pageChangeNotify(pageObj.current-1)" v-if="pageObj.current>1">&laquo; prev</a>'+
+    '<a href="javascript:;" v-on:click="pageChangeNotify(--pageObj.current)" v-if="pageObj.current>1">&laquo; prev</a>'+
     '</span>'+
     '<div class="pgs clearfix">'+
     '<a href="javascript:;" class="pg" v-on:click="pageChangeNotify(i)" v-for="i in indexs" v-bind:class="{active:i==pageObj.current}">{{i}}</a>'+
     '</div>'+
     '<span class="next text-center">'+
-    '<a href="javascript:;" v-on:click="pageChangeNotify(pageObj.current+1)" v-if="pageObj.current < pageObj.total">next &raquo;</a>'+
+    '<a href="javascript:;" v-on:click="pageChangeNotify(++pageObj.current)" v-if="pageObj.current < pageObj.total">next &raquo;</a>'+
     '</span>',
     props:['pageObj'],
     computed: {
