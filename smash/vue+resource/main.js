@@ -51,17 +51,17 @@
     props:['pageObj'],
     computed: {
       indexs: function(){
-        var left = 1
+        var left = 1;
         var right = this.pageObj.total;
-        var ar = []
+        var ar = [];
         if(this.pageObj.total>= 7){
           if(this.pageObj.current > 3 && this.pageObj.current <= this.pageObj.total-2){
             left = this.pageObj.current - 3;
             right = this.pageObj.current + 2;
           }else{
             if(this.pageObj.current<=3){
-              left = 1
-              right = 6
+              left = 1;
+              right = 6;
             }else{
               right = this.pageObj.total;
               left = this.pageObj.total - 5;
@@ -72,7 +72,7 @@
           ar.push(left);
           left ++;
         }
-        return ar
+        return ar;
       }
     },
     methods:{
