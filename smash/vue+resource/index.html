@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="../public/css/normalize.css">
   <link rel="stylesheet" href="../public/css/main.css">
   <!-- endbuild -->
+  <script src="../public/js/vue.js"></script>
+  <script src="../public/js/vue-resource.js"></script>
 </head>
 <body>
 
@@ -150,11 +152,11 @@
       </ul>
       <div class="list">
         <div class="article-list">
-
+          <art v-bind:list="list"></art>
         </div>
 
         <div class="page clearfix">
-
+          <page v-bind:page-obj="pageObj"></page>
         </div>
         <a href="javascript:;" class="toTopBtn">↑ Back to top</a>
       </div>
