@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../course/public/js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div>
+			
+		</div>
+		<script type="text/javascript">
+			$.get('page.php',{p:1},function(data){
+				var data = JSON.parse(data);
+				var list = data.list;
+				var html = "";
+				for (var i=0;i<list.length;i++) {
+					html+='<div class="content_Rtop"><a href="javescript:;"><h2>'+list[i].name+
+					'</h2></a><p>By <a href="">'+list[i].author+
+					'</a></p><div class="content_Rtop1"><span id="img_icon"><img src="img/icon-meta-time.svg"></span><span>September 15th，2016</span></div><div class="content_Rtop1">'
+					'<span id="img_icon"><img src="img/icon-meta-tags.svg"></span><span>Apps Personalization</span></div>'
+					'<div class="content_Rtop1"><span id="img_icon"><img src="img/icon-meta-comments.svg"></span><span>4 Comments</span></div>'
+					'<h5>Once upon a time，in the not-so-distant past,people considered websites to be a prime indication of how users attention was brief and unforgiving . Remember the dreaded bounce rate?</h5>'
+					'<span id="img_preview"><img src="img/mobile-banners-preview-opt.png"></span>'
+					'<h6>Remerber the numerous times you worried that your content and graphics might not be 100% clear to users? That was nothing. Compared to mobile, engaging users on the web is a piece of cake.</h6>'
+					'<div id="content_Rtop_a"><a href="javescript:;"><span>Read more...</span></a></div></div>'
+				};
+				$('.content_Rtop').html(html);
+			})
+		</script>
+	</body>
+</html>

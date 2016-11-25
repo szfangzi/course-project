@@ -4,10 +4,12 @@
  * 基本默认值
  //************/
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 ::selection {
-  background-color: #333; }
+  background-color: #fff;
+}
 
 ul {
   margin: 0;

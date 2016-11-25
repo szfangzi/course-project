@@ -1,0 +1,110 @@
+
+a {text-decoration: none;}
+a:hover { text-decoration:underline; }
+* {margin: 0;padding: 0;}
+ul {list-style: none;}
+h2{font-family: georgia;color: #333333;font-size: 2em;}
+body {background: url(img/smbg.png);}
+
+#head {width: 100%;}
+#headL {float:left;padding-top: 25px;padding-left: 30px;padding-bottom: 30px;}
+#headL img{ height: 42px;}
+#headR {float: right;padding-right: 25px;padding-top: 25px;padding-bottom: 30px;}
+#headR_search {float: right;width:52px;height:42px;background:#e95c33;border-radius: 10px;border: 0;}
+#headR_search img {width: 100%;height: 70%;padding-top: 7px;}
+#headR_menu {float: right;width:77px;height:42px;margin-left:15px;margin-right:15px;background: #e95c33;border-radius: 10px;border: 0;text-align: center;line-height: 42px;}
+#headR_menu a {color: white;font-weight: bold;font-family: arial;}
+
+
+#content {background: white;clear: both;padding-top: 30px;padding-left: 30px;}
+#content_T {padding-top:20px;padding-bottom:12px;font-family: georgia;color: #333333;font-size: 1.5em;border-bottom: 1px solid #cfb7cf;}
+#content_T a {padding-left: 5px;color: #6acff1;font-family: georgia;font-size: 1em;}
+
+#img_icon img {width: 20px;height: 20px;}
+#img_icon {margin-top: -2px;float: left;margin-right: 5px;}
+
+#content_Top {float: left;width: 100%;}
+#content_Top h2 {padding-top: 30px;width: 100%;}
+.content_Top1 {float: left;padding-top: 30px;padding-right: 43px;}
+.content_Top1 span {font-family: arial;color: #b7b7df;}
+.content_Top2 {float: left;padding-top: 30px;padding-right: 43px;}
+.content_Top2 span {font-family: arial;color: #666682;}
+.content_Top3 {float: left;padding-top: 30px;padding-right: 43px;}
+.content_Top3 span {font-family: arial;color: #666682;}
+.content_TopText {float: left;margin-top: 65px;border-bottom:2px solid #41b7d8;}
+.content_TopText h5 {font-style: italic;font-size: 1.2em;color:#333333;line-height: 1.5em;}
+#img_preview {padding-top: 20px;}
+#img_preview img{width: 100%;}
+.content_TopText h6 {padding-top:45px;font-family:georgia;font-size: 1em;color: #666666;line-height: 1.5em;}
+#content_Top_a {width: 103px;height: 34px;margin-top:30px;margin-bottom:70px;background-color: #41b7d8;text-align: center;line-height: 34px;border-radius: 5px;}
+#content_Top_a span {color: white;font-family: arial;}
+
+#content_Center {float: left;width: 100%;}
+#content_Center h2 {padding-top: 30px;width: 100%;}
+.content_Center1 {float: left;padding-top: 30px;padding-right: 43px;}
+.content_Center1 span {font-family: arial;color: #b7b7df;}
+.content_Center2 {float: left;padding-top: 30px;padding-right: 43px;}
+.content_Center2 span {font-family: arial;color: #666682;}
+.content_Center3 {float: left;padding-top: 30px;padding-right: 43px;}
+.content_Center3 span {font-family: arial;color: #666682;}
+.content_CenterText {float: left;margin-top: 65px;border-bottom:2px solid #41b7d8;}
+.content_CenterText h5 {font-style: italic;font-size: 1.2em;color:#333333;line-height: 1.5em;}
+.content_CenterText h6 {padding-top:45px;font-family:georgia;font-size: 1em;color: #666666;line-height: 1.5em;}
+#content_Center_a {width: 103px;height: 34px;margin-top:30px;margin-bottom:70px;background-color: #41b7d8;text-align: center;line-height: 34px;border-radius: 5px;}
+#content_Center_a span {color: white;font-family: arial;}
+
+#content_Bottom {float: left;width: 100%;}
+#content_Bottom h2 {padding-top: 30px;width: 100%;}
+.content_Bottom1 {float: left;padding-top: 30px;padding-right: 43px;}
+.content_Bottom1 span {font-family: arial;color: #b7b7df;}
+.content_Bottom2 {float: left;padding-top: 30px;padding-right: 43px;}
+.content_Bottom2 span {font-family: arial;color: #666682;}
+.content_Bottom3 {float: left;padding-top: 30px;padding-right: 43px;}
+.content_Bottom3 span {font-family: arial;color: #666682;}
+.content_BottomText {float: left;margin-top: 65px;border-bottom:2px solid #41b7d8;}
+.content_BottomText h5 {font-style: italic;font-size: 1.2em;color:#333333;line-height: 1.5em;}
+.content_BottomText h6 {padding-top:45px;font-family:georgia;font-size: 1em;color: #666666;line-height: 1.5em;}
+#content_Bottom_a {width: 103px;height: 34px;margin-top:30px;margin-bottom:70px;background-color: #41b7d8;text-align: center;line-height: 34px;border-radius: 5px;}
+#content_Bottom_a span {color: white;font-family: arial;}
+
+#content_Foot{width:100%;float: left;}
+#content_FootUl {width: 100%;}
+#content_FootUl li {margin-top: 35px;float:left;text-align:center;width:80px;height: 35px;background: white; border-radius: 5px;border: 1px solid white;}
+#content_FootUl a {color: #41bcde;line-height: 35px;}
+#content_FootUl li:hover {background-color: #41bcde;}
+#content_FootUl li:hover a {color: white;}
+
+#content_FootP {float: left;width: 100%;margin-top: 20px;}
+#content_Foot_prev {float:left;width: 56px;height: 35px;background:#e75631;border-radius: 5px;border: 1px solid white;}
+#content_Foot_prev a {color:white;text-align:center;font-family:helvetica;line-height: 35px;margin-left: 7px;}
+#content_Foot_next {float:right;margin-right:30px;width: 56px;height: 35px;background:#e75631;border-radius: 5px;border: 1px solid white;}
+#content_Foot_next a {color:white;text-align:center;font-family:helvetica;line-height: 35px;margin-left: 7px;}
+
+#content_Foot_back{float:right;margin-right: 25px;line-height: 20px;margin-top: 70px;margin-bottom: 20px;border-bottom: 2px solid #f4f4f4;}
+#content_Foot_back a {color:#b7b7df;float:right;font-family:helvetica; font-size: 0.8em;}
+
+#foot{width: 100%;float: left;}
+#foot_Top {float: left;padding-top: 25px;padding-left: 30px;}
+#foot_Top img {width: 50%;}
+#foot_L {float: left;width: 33%;margin-right: 1%;}
+#foot_L p {color: #5b5b73;font-size: 0.8em;font-family: helvetica;}
+#foot_L a {color: #41bcde;font-weight:bold ;}
+
+#foot_C {float: left;width: 33%;}
+#foot_C p {color: #5b5b73;font-size: 0.8em;font-family: helvetica;}
+#foot_C a {color: #41bcde;font-weight:bold ;}
+
+#foot_R {float: left;width: 33%;}
+#foot_R p {color: #5b5b73;font-size: 0.8em;font-family: helvetica;}
+#foot_R a {color: #41bcde;font-weight:bold ;}
+
+#foot_bottom {float: left;padding-left: 30px;padding-top: 60px;}
+#foot_bottom p {font-family:"arial narrow";font-size: 13px;color: #cfb7cf;}
+#foot_bottom a {color: #41bcde;font-family: helvetica;font-size: 0.8em;}
+
+
+
+
+
+
+

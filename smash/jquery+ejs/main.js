@@ -32,6 +32,7 @@
     $('body').animate({"scrollTop":0}, 500);
   });
 
+  //初始化第一页数据
   $.get('../public/api/page.php', {p:1}, function (data) {
     var html = '';
     data = JSON.parse(data);
@@ -159,6 +160,8 @@
     loginPopup.open();
   }
 
+
+  //登录
   $('.ctrl .btn-login').click(function (e) {
     var username = $('#username').val();
     var password = $('#password').val();
