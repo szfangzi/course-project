@@ -38,7 +38,7 @@
                 Search on Smashing Magazine
             </div>
             <div class="headB_search">
-                <input type="text" name="headB_text" id="headB_text" value="e.g.CSS"/>
+                <input type="text" name="headB_text" id="headB_text" placeholder="e.g.CSS" />
 
                 <p id="headB_btn"><a href="javescript:;">Search</a></p>
             </div>
@@ -225,14 +225,42 @@
     });
 
 
-    var oHeadB_search = document.getElementById("headB_text");
+//    var oHeadB_search = document.getElementById("headB_text");
+//
+//    oHeadB_search.onfocus = function () {
+//        oHeadB_search.value = "";
+//    }
+//    oHeadB_search.onblur = function () {
+//        oHeadB_search.value = "e.g.CSS";
+//    }
 
-    oHeadB_search.onfocus = function () {
-        oHeadB_search.value = "";
-    }
-    oHeadB_search.onblur = function () {
-        oHeadB_search.value = "e.g.CSS";
-    }
+
+    $('#headB_btn').on('click', function (e) {
+      var name = $('#headB_text').val().trim();
+      $.get('../public/json/list.json', function (data) {
+        var list = data.filter(function (n) {
+          return n.name.indexOf(name) >= 0;
+        });
+
+        var html = "";
+        for (var i = 0; i < list.length; i++) {
+          html += '<div class="content_Rtop"><a href="javescript:;"><h2>' + list[i].name +
+            '</h2></a><p>By <a href="javescript:;">' + list[i].author +
+            '</a></p><div class="content_Rtop1"><span id="img_icon"><img src="img/icon-meta-time.svg"></span><span>September 15th，2016</span></div><div class="content_Rtop1">' +
+            '<span id="img_icon"><img src="img/icon-meta-tags.svg"></span><span>Apps Personalization</span></div>' +
+            '<div class="content_Rtop1"><span id="img_icon"><img src="img/icon-meta-comments.svg"></span><span>4 Comments</span></div>' +
+            '<h5>Once upon a time，in the not-so-distant past,people considered websites to be a prime indication of how users attention was brief and unforgiving . Remember the dreaded bounce rate?</h5>' +
+            '<span id="img_preview"><img src="img/mobile-banners-preview-opt.png"></span>' +
+            '<h6>Remerber the numerous times you worried that your content and graphics might not be 100% clear to users? That was nothing. Compared to mobile, engaging users on the web is a piece of cake.</h6>' +
+            '<div id="content_Rtop_a"><a href="javescript:;"><span>Read more...</span></a></div></div>'
+        }
+        $('.list').html(html);
+
+$('#content_Rfoot_ul').hide();
+
+      });
+    });
+
 </script>
 </body>
 </html>
