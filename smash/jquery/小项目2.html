@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{margin: 0;padding: 0;}
+		.board{width: 1000px;margin: 0 auto;font-size: 15px;}
+		.tb{width: 1000px;height: 80px;}
+		.tb1{width:200px;height: 80px;float: left;background: url(img/logo.png);background-size:200px 80px ;}
+		.tb2{width:500px;height: 80px;float: left;background: #F4F4F4;}
+		.tb2 div{text-align: center;padding-top:30px;padding: 30px 20px 0 20px;height: 48px;display:inline-block ;
+		border-right: 1px solid #eee;float: left;transition:500ms;}
+		.tb2 div:hover{background-color: yellow;}
+		.b2{background: url(img/cody.svg) no-repeat;background-size:50%;background-position: 38px 10px;}
+		.tb3{width: 300px;height: 30px;float:right;padding-top: 50px;background-color: #F4F4F4;position: relative;}
+		.tb3 a{width: 20px;display: inline-block;background: url(img/channels.svg) no-repeat;height: 20px;background-size: 300%;}
+		.tb3 a.a1{background-position: 77% 9%;float:right;opacity: 0.5;}
+		.tb3 a.a2{background-position: 77% 36%;float:right;opacity: 0.5;}
+		.tb3 a.a3{background-position: 77% 63%;float:right;opacity: 0.5;}
+		.tb3 a.a4{background-position: 77% 91%;float:right;opacity: 0.5;}
+		.a5{background: white;border: 1px solid black;border-radius: 5px;width: 32px;
+		position: absolute; left: 240px;top: 10px;}
+		.tb4{width:1000px;height:150px;float: left;padding: 10px 0 0 55px;background:#FFFFFF ;}
+		#text{width: 650px;height: 60px;border-radius:10px 0 0 10px;float: left;}
+		#button{height: 65px;width: 175px;margin-left:0 ;background: #E74B2F;border-radius:0 10px 10px 0;}
+		.nr{width: 1000px;height:2800px;border: 1px solid white;}
+		.nr1{width: 280px;float: left;background:#FFFFFF;}
+		.clear{clear: both;}
+		/*.bt1{width:280px;font-weight: bold;border-left: 10px solid #C0E5DF;} */
+		/*.bt2{width:280px;font-weight: bold;border-left: 10px solid #C5EB9D;}
+		.bt3{width:280px;font-weight: bold;border-left: 10px solid #F7ED9A;}
+		.bt4{width:280px;font-weight: bold;border-left: 10px solid #DBC8DA;}*/
+		.bt5{width:280px;font-weight: bold;border-left: 10px solid #F9C6CA;}
+		.bt6{width:280px;font-weight: bold;border-left: 10px solid #B1D1ED;}
+		.nr1 li{height: 40px;margin-left:50px ;list-style: none;font-weight: 200;}
+		.nr1 h3{margin-left:40px ;height:40px;padding: 10px;}
+		.nr2{width: 720px;float: left;background:#FFFFFF ;}
+		.tybt{font-size: 28px;font-weight: bold;width: 720px;}
+		.xbt1{font-size: 24px;color: #C4BDCD;float: left;width: 35px;}
+		.xbt2{font-size: 24px;color: #41B7DA;float: left;}
+		.xhx1{border-bottom: 1px solid gray;width: 720px;border-color: rgba(88, 205, 199,0.2);}
+		.xbq{height: 50px;list-style: none;padding: 30px 10px 20px 0;}
+		.xbq li{float:left;margin-right:30px ;}
+		.jw{border-bottom: 2px solid blue;width: 720px;margin: 50px 0 50px 0;}
+		.dl{height: 100px;font-weight: bold;line-height: 36px;letter-spacing: 2px;}
+		.dll{font-size: 16px;letter-spacing: 1px;line-height: 25px;}
+		#blbt{height: 36px;background: #41B7D8;border-radius: 6px;color: #FFFFFF;}
+		.ym{height:100px;width: 720px;}
+		.ym input{width: 60px;height: 30px;}
+		#bt1{margin-left:50px ;}
+		#bt5{margin-right: 30px;float:right;background: #E75631;}
+		.bk{float: right;margin-top: 10px;}
+		.wb{width:1000px;height: 315px;background-color:#F2F2F2 ;}
+		.wb1{width: 280px;height: 240px;margin-left: 50px ;list-style: none;float: left;}
+		.wbbt{font-size: large;color: #41B7D8;}
+
+		</style>
+	</head>
+	<body>
+		<div class="board">
+			<div class="tb">
+				<div class="tb1"></div>
+				<div class="tb2">
+					<div id="b1">books</div>
+					<div class="b2">week</div>
+					<div id="b3">llll</div>
+					<div id="b4">hhhh</div>
+					<div id="b5">hhhd</div>
+				</div>
+				<div class="tb3">
+					<a href="" class="a1"></a>
+					<a href="" class="a2"></a>
+					<a href="" class="a3"></a>
+					<a href="" class="a4"></a>
+					<div class="a5">登录</div>
+				</div>
+				<div class="tb4">Search on Smashing Magazine</br>
+					<input type="text" id="text" value="e.g.CSS" />
+                    <input type="button" id="button" value="search" />
+				</div>
+			</div>
+
+			<div class="nr">
+				<div class="nr1">
+					<div class="clear">
+
+					</div>
+					    <div class="bt1">
+					    	<h3>CODING</h3>
+						<ul>
+							<li>CSS</li>
+							<li>HTML</li>
+							<li>JavaScript</li>
+							<li>Technique</li>
+						</ul>
+						</div>
+						<div class="bt2">
+					    	<h3>CODING</h3>
+						<ul>
+							<li>CSS</li>
+							<li>HTML</li>
+							<li>JavaScript</li>
+							<li>Technique</li>
+						</ul>
+						</div>
+						<div class="bt3">
+					    	<h3>CODING</h3>
+						<ul>
+							<li>CSS</li>
+							<li>HTML</li>
+							<li>JavaScript</li>
+							<li>Technique</li>
+						</ul>
+						</div>
+						<div class="bt4">
+					    	<h3>CODING</h3>
+						<ul>
+							<li>CSS</li>
+							<li>HTML</li>
+							<li>JavaScript</li>
+							<li>Technique</li>
+						</ul>
+						</div>
+						<div class="bt5">
+					    	<h3>CODING</h3>
+						<ul>
+							<li>CSS</li>
+							<li>HTML</li>
+							<li>JavaScript</li>
+							<li>Technique</li>
+						</ul>
+						</div>
+						<div class="bt6">
+					    	<h3>CODING</h3>
+						<ul>
+							<li>CSS</li>
+							<li>HTML</li>
+							<li>JavaScript</li>
+							<li>Technique</li>
+						</ul>
+						</div>
+
+				</div>
+				<div class="nr2">
+					<div class="nrrr"></div>
+					<div class="hhhh">
+						<button class="prep">prep</button>
+					    <div class="bttt"></div>
+					    <button class="next">next</button>
+					</div>
+					<a href="" class="bk">back to top</a>
+				</div>
+
+			</div>
+
+			<div class="wb">
+				<div class="wb1">
+					<li><img src="img/sidebar-sb5.png"/></li>
+					<div class="wbbt">smashing books 5</div>
+					<p>with smart front-end techniques from real-life responsive
+						project.</p>
+						<a href="">learn more...</a>
+				</div>
+				<div class="wb1">
+					<li><img src="img/sidebar-sb5.png"/></li>
+					<div class="wbbt">smashing books 5</div>
+					<p>with smart front-end techniques from real-life responsive
+						project.</p>
+						<a href="">learn more...</a>
+				</div>
+				<div class="wb1">
+					<li><img src="img/sidebar-sb5.png"/></li>
+					<div class="wbbt">smashing books 5</div>
+					<p>with smart front-end techniques from real-life responsive
+						project.</p>
+						<a href="">learn more...</a>
+				</div>
+				<!--<div class="wb2">
+					with a commitment to quality content for the design community.
+				</div>-->
+			</div>
+		</div>
+
+		<script type="text/javascript" src="jquery-1.11.1.js">
+
+		</script>
+		<script>
+		var current=1;
+		renderList(current);
+		function renderList(p){
+			$.get("page.php",{p:p},function(a){
+				var data=JSON.parse(a);
+				var pp="";
+				current=parseInt(data.current);
+				for(var i=0;i<data.list.length;i++){
+					pp+='<div class="tybt">'+data.list[i].name+'</div>'+
+						'<div class="xbt1">By </div>'+
+						'<div class="xbt2">'+ data.list[i].author+'</div>'+
+						'<div class="clear"></div>'+
+						'<div class="xhx1"></div>'+
+						'<div class="xbq">'+
+							'<li><img src="img/icon-meta-time.svg"/ width="20px" height="20px">september 15th.2016</li>'+
+							'<li><img src="img/icon-meta-tags.svg"/ width="20px" height="20px">apps personalization</li>'+
+							'<li><img src="img/icon-meta-comments.svg"/ width="20px" height="20px">4 comments</li>'+
+						'</div>'+
+
+					    '<p class="dl">Once upon a time,in the not-so-distant past,people considered websites'+
+					    '<br/>to be a prime indication of how users attention was brief and <br/>unforgiving.Remember'+
+					    'the dreaded bounce rate?</p>'+
+					    '<img src="mobile-banners-preview-opt.png"/>'+
+					    '<p class="dll">Remember the numerous times you worries thst you content and graphics might<br/>'+
+						'not be 100% clear to users?That was nothing.compared to mobiles,engaging<br />'+
+						'users on the web is a piece of cake.</p>'+
+					    '<input type="button" id="blbt" value="Read more..." />'+
+					    '<div class="jw"></div>'
+				}
+				$(".nrrr").html(pp);
+				var ppp="";
+				for(var i=1;i<=data.total;i++){
+					if(p==i){
+						ppp+='<button style="background:blue">'+i+'</button>';
+					}else{
+						ppp+='<button>'+i+'</button>';
+					}
+				}
+				$(".bttt").html(ppp);
+				if(p==1){
+					$(".prep").css("visibility",'hidden');
+				}else{
+					$(".prep").css("visibility","");
+				}
+				if(p==data.total){
+					$(".next").css("visibility","hidden");
+				}else{
+					$(".next").css("visibility","");
+				}
+
+			})
+		}
+
+
+
+		$(".bttt").on("click","button",function(){
+			var bb=$(this).html();
+			renderList(bb);
+		})
+
+		$(".hhhh").on("click",".prep",function(){
+			renderList(current-1);
+		})
+		$(".hhhh").on("click",".next",function(){
+			renderList(current+1);
+		})
+
+		</script>
+
+	</body>
+</html>
