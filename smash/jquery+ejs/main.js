@@ -169,7 +169,6 @@
 
       if(data == 1){
         alert('登录成功！');
-        $.cookie('user', username, { expires: 7 });
         $('.user-float').addClass('on');
         loginPopup.close();
       }else{
@@ -181,12 +180,16 @@
   });
 
   $('.btn-esc').click(function (e) {
-    $.cookie('user', '', { expires: -1 });
-    $('.user-float').removeClass('on');
-    alert('已退出！');
+    $.post('../public/api/logout.php', function (data) {
+      if(data == 1) {
+        $('.user-float').removeClass('on');
+        alert('已退出！');
+      }
+    });
+
   });
 
-  if($.cookie('user')){
+  if($.cookie('name')){
     $('.user-float').addClass('on');
   }else{
     $('.user-float').removeClass('on');
