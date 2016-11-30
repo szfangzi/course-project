@@ -261,6 +261,14 @@ $('#content_Rfoot_ul').hide();
       });
     });
 
+  $(window).on('scroll', function (e) {
+    if($(document).scrollTop() >= 200){
+      $('.headB_search').addClass('fixed');
+    }else{
+      $('.headB_search').removeClass('fixed');
+    }
+  });
+
 </script>
 </body>
 </html>

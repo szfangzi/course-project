@@ -35,6 +35,10 @@ ul {list-style: none;}
 #headB {width: 990px;height: 152px;background: white;}
 .headB_sear {padding-left: 65px;width: 925px;float: left;height: 47px;line-height: 47px;color: #cfb7cf;font-size:16px;font-family: arial;}
 .headB_search {height: 64px;padding-left: 65px;padding-bottom: 47px;}
+.headB_search.fixed{
+  position: fixed;
+  top: 0;
+}
 #headB_text {float:left;height: 60px;width:648px;color: #cfb7cf;text-indent: 2em;padding: 0;border-radius: 10px 0px 0px 10px;border: 1px solid #cfb7cf;outline: 0;}
 #headB_btn {float:left;height: 60px;width: 187px;background-color: #e75431;border: 1px solid #e75431;border-radius: 0px 10px 10px 0;text-align: center;}
 #headB_btn a {color: white;font-weight: bold;font-size: 16px;line-height: 60px;font-family: arial;}
