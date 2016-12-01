@@ -75,36 +75,18 @@
     var $this = $(this);
     var num = $this.html();
     current = parseInt(num);
-    $.get('../public/api/page.php', {p:num}, function (data) {
-      data = JSON.parse(data);
-      var list = data.list;
-      var tmpl = $('#article-tmpl').html();
-      var html = ejs.render(tmpl, {list:list});
-      $('.article-list').html(html);
-      $('body').animate({"scrollTop":0}, 500);
-
-      var tmpl = $('#page-tmpl').html();
-      var html = ejs.render(tmpl, {data: data});
-      $('.page').html(html);
-    });
+    listRender(current);
 
   }).on('click', '.prev a', function () {
     current = current-1;
-    $.get('../public/api/page.php', {p:current}, function (data) {
-      data = JSON.parse(data);
-      var list = data.list;
-      var tmpl = $('#article-tmpl').html();
-      var html = ejs.render(tmpl, {list:list});
-      $('.article-list').html(html);
-      $('body').animate({"scrollTop":0}, 500);
-
-      var tmpl = $('#page-tmpl').html();
-      var html = ejs.render(tmpl, {data: data});
-      $('.page').html(html);
-    });
+    listRender(current);
 
   }).on('click', '.next a', function () {
     current = current+1;
+    listRender(current);
+  });
+
+  function listRender(current) {
     $.get('../public/api/page.php', {p:current}, function (data) {
       data = JSON.parse(data);
       var list = data.list;
@@ -117,7 +99,7 @@
       var html = ejs.render(tmpl, {data: data});
       $('.page').html(html);
     });
-  });
+  }
 
   //搜索
   $('.searchInputBox .searchBtn').click(function () {
