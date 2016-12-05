@@ -222,7 +222,7 @@ a:hover, a:active {
 .user-float.on .before-login {
   display: none; }
 
-@media only screen and (min-width: 50em) {
+@media only screen and (min-width: 50em){
   body {
     border-left: .625em solid transparent;
   }
