@@ -10,7 +10,7 @@
   Vue.component('page', {
     template:
     '<div class="pgs clearfix">'+
-    '<a href="javascript:;" class="pg"  v-for="i in indexs" v-bind:class="{active:i==pageObj.current}">{{i}}</a>'+
+    '<a href="javascript:;" class="pg" v-on:click="test"  v-for="i in indexs" v-bind:class="{active:i==pageObj.current}">{{i}}</a>'+
     '</div>',
     props:['pageObj'],
     computed: {

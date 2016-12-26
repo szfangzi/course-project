@@ -1,7 +1,7 @@
 <?php
 $p = $_GET['p'];
 $data = array(
-	"total"=>4,
+	"total"=>14,
 	"current"=>$p,
 	"list"=>[
 		array(
